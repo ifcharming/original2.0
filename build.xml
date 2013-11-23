@@ -19,7 +19,8 @@
     <attribute name="excludes" default=""/>
     <sequential>
         <javac
-            target="1.6"
+            source="1.6"
+            bootclasspath="/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar"
             srcdir="@{srcdir}"
             destdir="@{destdir}"
             excludes="@{excludes}"
@@ -1682,7 +1683,7 @@ BENCHMARKS
     description="Call the standard benchmark target configured to use one node of the test cluster.">
     <antcall target="benchmark" inheritAll='true'>
         <param name="hostcount" value="1"/>
-        <param name="host1" value="localhost"/>
+        <param name="host1" value="copley.csail.mit.edu"/>
         <param name="sitesperhost" value="2"/>
         <param name="clientcount" value="1"/>
         <param name="clienthost1" value="localhost"/>
